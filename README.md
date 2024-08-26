@@ -54,7 +54,7 @@ phiên bản bạn đang dùng sẽ có dấu `*`
 
 <details lose="" align="left">
   <summary>
-    Tạo Project: vite + React + tailwind css + TypeScript
+    Tạo Project: vite + React + TypeScript
   </summary>
   <div align="center"> CREATE PROJECT </div> 
 <br>
@@ -64,7 +64,6 @@ phiên bản bạn đang dùng sẽ có dấu `*`
 <p align="center">
     <a href="https://react.dev/"><img src="https://skillicons.dev/icons?i=react" alt="react"/></a>
     <a href="https://vitejs.dev/"><img src="https://skillicons.dev/icons?i=vite" alt="Vite"/></a>
-    <a href="https://tailwindcss.com/"><img src="https://skillicons.dev/icons?i=tailwind" alt="tailwind"/></a>
 </p>
 
 B1. Tạo thư mục chứa Project trên máy.
@@ -87,8 +86,72 @@ Select a variant: >> TypeScript (nhấn mũi tên xuống để lựa chọn).
 
 ![image](https://github.com/user-attachments/assets/7159cbf8-d55a-431d-b418-5d7b77b46475)
 
-B4. Sau khi hoàn tất bạn có thể duy chuyển đến thư mục để kiểm tra: 
-<br>
-![image](https://github.com/user-attachments/assets/454f5384-b2fb-42bc-9ddc-01cc48d7196d)
+B4. Sau khi hoàn tất bạn có thể duy chuyển đến thư mục để kiểm tra và chạy 2 lệnh sau để chạy app:
 
+```cmd
+cd <Your_Project_folder>
+npm install 
+npm run dev
+```
+
+<br>
+
+</details> 
+<details lose="" align="left">
+  <summary>
+    Sử dụng thư viện tailwind CSS và Dependencies liên quan. 
+  </summary>
+<br>
+<p align="center">Cài đặt và cấu hình tailwind CSS</p>  
+<p align="center">
+  <a href="https://tailwindcss.com/"><img src="https://skillicons.dev/icons?i=tailwind" alt="tailwind"/></a>
+
+  B1. Nhập lệnh sau trên cmd của project:
+
+```cmd
+npm install -D tailwindcss postcss autoprefixer
+```
+trong đó:
+<br>
+`Tailwind`: The Tailwind CSS framework 
+<br>
+`PostCSS`: Post CSS is a tool for transforming CSS with JavaScript plugins. Tailwind CSS uses PostCSS to process its CSS.
+<br>
+`Autoprefixer`: Autoprefixer, which is a PostCSS plugin that parse CSS and add vendor prefixes to CSS rules.
+<br>
+</p>
+<br>
+<br>
+
+B4. tạo cấu hình Tailwind `postcss.config.js ` ,  `tailwind.config.js`
+
+```cmd
+npx tailwind init -p
+```
+<br>
+<br>
+B5. duy chuyển đến thư mục `tailwind.config.js`, chỉnh sửa theo nội dung sau.
+
+```javascript
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html" , "./src/**/*.{js,ts,jsx,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+<br>
+<br>
+
+B6. xóa nội dung trong thư mục `index.css` và chỉnh sửa như sau:
+
+```cmd
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
 </details> 
